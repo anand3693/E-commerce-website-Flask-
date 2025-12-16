@@ -1,9 +1,9 @@
-🛒 E-Commerce Website (Flask)
+## 🛒 E-Commerce Website (Flask)
 
 A full-stack e-commerce web application built using Flask, supporting user, merchant, and admin roles. The project demonstrates core web development concepts such as authentication, role-based access, product and order management, and session handling.
 
-🚀 Features
-👤 User
+## 🚀 Features
+## 👤 User
 
 User registration and login
 
@@ -15,7 +15,7 @@ Place orders
 
 View order history
 
-🏪 Merchant
+## 🏪 Merchant
 
 Merchant registration and login
 
@@ -27,7 +27,7 @@ Manage stock and restock products
 
 View merchant-specific orders
 
-🛠️ Admin
+## 🛠️ Admin
 
 Admin login
 
@@ -37,7 +37,7 @@ View all products and orders
 
 Monitor platform activity
 
-🧰 Tech Stack
+## 🧰 Tech Stack
 
 Backend: Flask (Python)
 
@@ -49,7 +49,7 @@ File Uploads: Werkzeug
 
 Data Storage: In-memory (Python dictionaries & lists)
 
-📁 Project Structure
+## 📁 Project Structure
 Flask E-commerce website/
 │── app.py
 │── requirements.txt
@@ -61,27 +61,29 @@ Flask E-commerce website/
 │   ├── merchant/
 │   └── admin/
 
-⚙️ Setup Instructions
+## ⚙️ Setup Instructions
 
-1. Create and activate virtual environment
+### 1. Create and activate virtual environment
 py -m venv venv
 venv\Scripts\activate
-2. Install dependencies
+### 2. Install dependencies
 pip install -r requirements.txt
-3. Run the application
+### 3. Run the application
 python app.py
 
 Open your browser and visit:
 
 http://127.0.0.1:5000/
-📦 Requirements
+
+## 📦 Requirements
 Flask==2.3.3
 Werkzeug==2.3.7
-📌 Notes
+
+## 📌 Notes
 
 This project uses in-memory data storage, so all data resets when the server restarts.
 
-Screenshots
+## Screenshots
 
 
 <img width="1920" height="898" alt="Screenshot (14)" src="https://github.com/user-attachments/assets/bcc5c75b-a6aa-4757-a09d-73b6ab40cea3" />
