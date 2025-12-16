@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Order history</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            body {
+                font-family: 'Poppins', sans-serif;
+                background: linear-gradient(to bottom right, #e3f2f7, #f8f9fa);
+                color: #28547f;
+            }
+
+            .navbar {
+                background-color: #17a2b8 !important;
+            }
+
+            .navbar-brand,
+            .nav-link,
+            .btn {
+                color: #2c3e50 !important;
+                font-weight: 500;
+            }
+
+            .nav-link:hover,
+            .btn:hover {
+                color: #0d5e6e !important;
+            }
+
+            .table {
+                background-color: white;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            }
+
+            .table thead {
+                background-color: #17a2b8;
+                color: white;
+            }
+
+            .btn-primary {
+                background-color: #17a2b8;
+                border-color: #17a2b8;
+            }
+
+            .btn-primary:hover {
+                background-color: #138496;
+                border-color: #117a8b;
+            }
+
+            .btn-light.text-dark {
+                background-color: #d1e7ea;
+                color: #2c3e50 !important;
+            }
+
+            .btn-light.text-dark:hover {
+                background-color: #b8d8dd;
+            }
+        </style>
+    </head>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/products">Products</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active btn btn-light text-dark" aria-current="page" href="/products">Home</a>
+                    </li>
+                </ul>
+            </div>
+    </nav>
+    <body>
+        <div class="container mt-5">
+            <h2 class="mb-4">Order history</h2>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Date</th>
+                        <th>Items</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <td>#{{ order.id }}</td>
+                        <td>{{ order.time }}</td>
+                        <td>
+                            <ul class="list-unstyled mb-0">
+                                {% for item in order["items"] %}
+                                <li>{{ item.name }} ({{ item.quantity }} × ₹{{ item.price }}) = ₹{{ item.subtotal }}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td>{{order.total}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
